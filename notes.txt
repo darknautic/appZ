@@ -1,0 +1,14 @@
+meteor list --using
+----------------------------
+
+standard-app-packages
+autopublish
+insecure
+preserve-inputs
+bootstrap
+accounts-base
+accounts-password
+accounts-ui
+email
+router
+jquery

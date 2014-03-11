@@ -1,0 +1,58 @@
+<head>
+  <title>appZ</title>
+</head>
+
+<body>
+<br>
+<b> darkNautic</b>  Login form ( v1.0 )<br><br>
+  {{> login}}
+  {{> register}}
+  {{> signControls}}
+  <br>
+  <br>
+  {{#if currentUser}}
+  {{> content}}
+  {{/if}}
+  
+
+  {{> userUpdate}}
+
+</body>
+
+<template name="login">
+
+  	<form id="login-form" action="action">
+		<div>
+			<input type="email" id="login-email" />
+			<input type="password" id="login-password" />
+			<input type="submit" id="login-button" class='btn btn-primary' value="Sign in" />
+		</div>
+	</form> 
+
+</template>
+
+<template name="register">
+    <form id="register-form" action="action">
+      <div>
+       <input type="email" id="account-email" />
+       <input type="password" id="account-password" />
+       <input type="submit" id="create-account" value="Create an Account" />
+     </div>
+   </form>
+</template>
+
+<template name="signControls">
+    <input type="submit" id="logout-button" class='btn btn-danger' value="Sign out" />
+</template>
+
+
+<template name="userUpdate">
+  <p>
+    <input id="updateUser" type="button" value="Update User Value" />
+    User last update: <span id="lastUpdated">{{lastUpdated}}</span>
+  </p>
+</template>
+
+<template name="content">
+  <p>Render count: <span id="renderCount"></span></p>
+</template>
