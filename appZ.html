@@ -3,20 +3,21 @@
 </head>
 
 <body>
-<br>
-<b> darkNautic</b>  Login form ( v1.0 )<br><br>
-  {{> login}}
-  {{> register}}
-  {{> signControls}}
-  <br>
-  <br>
-  {{#if currentUser}}
-  {{> content}}
-  {{/if}}
+  <div class="container-fluid">
+    <br>
+    <b> darkNautic</b>  Login form ( v1.0 )<br><br>  {{> whois}}
+    {{> login}}
+    {{> register}}
+    {{> signControls}}
+    <br>
+    <br><br>	
+    {{#if currentUser}}
+    {{> content}}
+    {{/if}}
   
+    {{> userUpdate}}
 
-  {{> userUpdate}}
-
+  </div> <!-- container -->
 </body>
 
 <template name="login">
@@ -55,4 +56,46 @@
 
 <template name="content">
   <p>Render count: <span id="renderCount"></span></p>
+</template>
+
+
+<template name="whois">
+
+  <ul class="nav nav-pills">
+    <li class="dropdown">
+      <a href="#" data-toggle="dropdown" class="dropdown-toggle">{{loggedUser}}<b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a id="whois" href="#">Sign out</a></li>        
+      </ul>
+    </li>
+  </ul>
+<!--Nice menu-->
+<!-- 
+<div class="bs-example">
+    <ul class="nav nav-pills">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Messages <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">Drafts</a></li>
+                <li><a href="#">Sent Items</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Trash</a></li>
+            </ul>
+        </li>
+        <li class="dropdown pull-right">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+-->
 </template>

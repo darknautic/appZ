@@ -10,3 +10,5 @@ preserve-inputs
 accounts-base
 accounts-password
 jquery
+force-ssl
+bootstrap
