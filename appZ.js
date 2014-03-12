@@ -25,6 +25,12 @@ if (Meteor.isClient) {
           //console.log(Meteor.users.find({_id: this.userId}));
           console.log("the user is :" + Meteor.userId());
           console.log("the user mail :" + Meteor.user().emails[0].address);
+          
+          var hashToken = Meteor.user();
+            //{'emails.address' : "s@s"},{'services.resume.loginTokens.hashedToken' : 1 })[0];
+          hashToken = hashToken;
+
+          console.log(hashToken);
           //console.log("the user mail :" + Meteor.user({services : { resume : { loginTokens : {}}}}));
           //console.log("the user mail :" + Meteor.user(     {'emails.address':"w@w"},{_id:1}    )._id);
 
