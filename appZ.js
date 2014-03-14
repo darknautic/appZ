@@ -25,8 +25,8 @@ if (Meteor.isClient) {
 
                   // The user has been logged in.
                   //console.log("the user is :" + Meteor.userId());
-                  console.log("the user mail :" + Meteor.user().emails[0].address);
-                  
+                  console.log("Info : mail " + Meteor.user().emails[0].address);
+                  console.log("Info : id " + Meteor.userId());
                   // Hash Value
                   /*var current_date = (new Date()).valueOf().toString();
                   var random = Math.random().toString();
@@ -36,7 +36,7 @@ if (Meteor.isClient) {
                   //Session.set('SessionID',Meteor.userId());
                   Session.set('loggedUser',Meteor.user().emails[0].address);                  
                   console.log("Successfully login");                  
-                  alert("run !!");
+                  alert("Continue ?");
 
               }              
                 
@@ -99,25 +99,6 @@ Template.register.events({
 */
 
 
-Template.signControls.events({
-  'click input' : function(){ 
-    Meteor.logout(function(err){
-        if (err) {
-          console.log("Err - signOut Process");
-          console.log(err);
-          //alert('Err - signOut Process');
-        }
-        else{
-          //Session.set('loggedUser',null);
-          delete Session.keys['loggedUser'];          
-          //console.log("Ok - signoOut successfully");
-          //alert('Ok - signoOut successfully');
-        }
-
-    });
-
-  }
-});
 
 Template.whois.events({
   'click a#whois' : function(){
